@@ -1,8 +1,21 @@
 package com.cursor.hw18.entity;
 
-import javax.persistence.*;
-import java.util.Set;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+
+@Component
 @Entity
 @Table(name = "Books")
 public class Book {
@@ -12,25 +25,23 @@ public class Book {
     @Column(name = "id")
     private Long bookId;
 
-    @Column(name = "authors_first_name")
-    private String authorsFirstName;
-
-    @Column(name = "authors_last_name")
-    private String authorsLastName;
-
     @Column(name = "title")
     private String title;
 
     @Column(name = "genre")
     private String genre;
 
+    @ManyToMany
+    @JoinTable(name = "joint_table",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+    private List<Author> authors = new ArrayList<>();
+
     @OneToMany(mappedBy = "book", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<JointTable> jointTables;
+    private List<JointTable> jointTables = new ArrayList<>();
 
 
-    public Book(String authorsFirstName, String authorsLastName, String title, String genre) {
-        this.authorsFirstName = authorsFirstName;
-        this.authorsLastName = authorsLastName;
+    public Book(String title, String genre) {
         this.title = title;
         this.genre = genre;
     }

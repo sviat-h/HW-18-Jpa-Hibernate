@@ -1,9 +1,22 @@
 package com.cursor.hw18.entity;
 
 
-import javax.persistence.*;
-import java.util.Set;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+
+@Component
 @Entity
 @Table(name = "Authors")
 public class Author {
@@ -19,8 +32,11 @@ public class Author {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy = "author", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<JointTable> jointTables;
+    @ManyToMany
+    @JoinTable(name = "joint_table",
+            joinColumns = @JoinColumn(name = "author_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private List<Book> books = new ArrayList<>();
 
 
     public Author(String firstName, String lastName) {
