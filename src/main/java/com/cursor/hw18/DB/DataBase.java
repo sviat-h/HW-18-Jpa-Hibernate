@@ -4,10 +4,19 @@ import com.cursor.hw18.entity.Author;
 import com.cursor.hw18.entity.Book;
 import com.cursor.hw18.entity.JointTable;
 import com.cursor.hw18.entity.User;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 
 @Component
 public class DataBase {
@@ -35,7 +44,6 @@ public class DataBase {
     private JointTable jointTableId3 = new JointTable(userId3, authorId3, bookId3);
     private JointTable jointTableId4 = new JointTable(userId4, authorId4, bookId4);
     private JointTable jointTableId5 = new JointTable(userId5, authorId5, bookId5);
-
 
     @Autowired
     private EntityManager entityManager;

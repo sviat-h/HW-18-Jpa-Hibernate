@@ -16,7 +16,6 @@ public class Hw18Application implements CommandLineRunner {
         SpringApplication.run(Hw18Application.class, args);
     }
 
-
     @Override
     public void run(String... args) throws Exception {
         appExecutor.runApp();
