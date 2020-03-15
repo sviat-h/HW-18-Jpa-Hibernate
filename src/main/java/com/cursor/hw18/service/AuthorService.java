@@ -7,6 +7,5 @@ import java.util.List;
 
 @Service
 public interface AuthorService {
-
     void addAuthorAndBooks(String firstName, String lastName, List<Book> books);
 }

@@ -23,7 +23,6 @@ public class LibraryMenu extends Menu {
 
     @Override
     protected void showMenu() {
-
         showItems(items);
         String choice = scanner.next();
 
@@ -52,7 +51,6 @@ public class LibraryMenu extends Menu {
     }
 
     private void addBookToLibrary() {
-
         System.out.println("Enter author first name: ");
         String firstName = scanner.next().toLowerCase();
 
@@ -74,16 +72,13 @@ public class LibraryMenu extends Menu {
     }
 
     private void showAllBooks() {
-
         userController.showAllBooks();
-
         showItems(exitItems);
         showExitMenu();
     }
 
 
     private void findByGenre() {
-
         System.out.println("Enter genre: ");
 
         String choice = scanner.next().toLowerCase();
@@ -97,14 +92,12 @@ public class LibraryMenu extends Menu {
             case "political satire":
 
                 userController.findBooksByGenre(capitalizeFirstLetter(choice));
-
                 showItems(exitItems);
                 showExitMenu();
         }
     }
 
     private void findByAuthor() {
-
         System.out.println("Enter author last name:");
 
         String choice = scanner.next().toLowerCase();
@@ -117,7 +110,6 @@ public class LibraryMenu extends Menu {
             case "king":
 
                 userController.findBooksByAuthor(capitalizeFirstLetter(choice));
-
                 showItems(exitItems);
                 showExitMenu();
         }

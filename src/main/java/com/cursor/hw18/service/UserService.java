@@ -7,7 +7,6 @@ import java.util.List;
 
 @Service
 public interface UserService {
-
     void addUsers(String firstName, String lastName, String username);
 
     List<User> getAllUsers();

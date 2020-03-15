@@ -26,9 +26,7 @@ public class BookServiceImpl implements BookService {
         System.err.println("There are the books of genre " + genre + ":\n");
 
         for (int i = 0; i < booksByGenre.size(); i++) {
-
             System.out.println(booksByGenre.get(i));
-
             if (booksByGenre.size() % 4 == 0) {
                 System.out.println("\n");
             }
@@ -42,9 +40,7 @@ public class BookServiceImpl implements BookService {
         System.err.println("There are the books of the author - " + authorsLastName + ":");
 
         for (int i = 0; i < booksByAuthorsLastName.size(); i++) {
-
             System.out.println(booksByAuthorsLastName.get(i));
-
             if (booksByAuthorsLastName.size() % 4 == 0) {
                 System.out.println("\n");
             }
@@ -58,9 +54,7 @@ public class BookServiceImpl implements BookService {
         System.err.println("There are all of our books: ");
 
         for (int i = 0; i < allBooks.size(); i++) {
-
             System.out.println(allBooks.get(i));
-
             if (allBooks.size() % 4 == 0) {
                 System.out.println("\n");
             }

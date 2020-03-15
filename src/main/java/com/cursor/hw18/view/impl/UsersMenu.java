@@ -23,27 +23,20 @@ public class UsersMenu extends Menu {
 
     @Override
     protected void showMenu() {
-
         List<User> users = userController.showAllUsers();
         int choice = scanner.nextInt();
 
         for (int i = 0; i < users.size(); i++) {
-
             System.out.println(i + 1 + ". " + users.get(i));
         }
         showItems(items);
 
         if (choice <= users.size() && choice != 0) {
-
             System.err.println("You are - " + users.get(choice - 1));
-
             libraryMenu.showMenu();
-
         } else if (choice == 0) {
             exit();
-
         } else {
-
             System.err.println("--------------------------\nWrong choice. Please try again.\n--------------------------");
             showMenu();
         }

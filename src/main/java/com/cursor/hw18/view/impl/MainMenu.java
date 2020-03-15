@@ -31,7 +31,6 @@ public class MainMenu extends Menu {
             case "1":
                 System.err.println("List of users. Who are you? (We do not have any user authentication, and therefore -" +
                         " please do not fool us. God see everything. Thanks!)");
-
                 usersMenu.showMenu();
                 break;
             case "0":

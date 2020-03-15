@@ -24,7 +24,6 @@ public class UserController {
 
     @Autowired
     public void addUsersToDb() {
-
         userService.addUsers("Bob", "Marley", "barley");
         userService.addUsers("Isabelle", "Hammond", "hammond");
         userService.addUsers("Sharon", "Rodgers", "rodgers");
@@ -44,22 +43,18 @@ public class UserController {
     }
 
     public void findBooksByGenre(String genre) {
-
         bookService.findBooksByGenre(genre);
     }
 
     public void findBooksByAuthor(String authorsLastName) {
-
         bookService.findBooksByAuthor(authorsLastName);
     }
 
     public void showAllBooks() {
-
         bookService.showAllBook();
     }
 
     public void addBookToLibrary(String authorFirstName, String authorLastName, String bookTitle, String bookGenre) {
-
         authorService.addAuthorAndBooks(authorFirstName, authorLastName, List.of(new Book(bookTitle, bookGenre)));
     }
 }
