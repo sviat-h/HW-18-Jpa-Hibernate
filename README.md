@@ -1,1 +1,1 @@
-# HW-18-Jpa-Hibernate
+# Jpa-Hibernate
